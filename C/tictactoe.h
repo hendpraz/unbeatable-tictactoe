@@ -69,7 +69,7 @@ void showHelp();
 // I.S. :
 // F.S. : Panduan bermain ditampilkan di layar
 
-void BacaSTEP(STR *S);
+void BacaSTEP(STR *S, int inp);
 // I.S. : input/output S terdefinisi
 // F.S. : Menghasilkan output nilai S baru berdasarkan input pemain dan pergerakan komputer
 // Proses : Membaca input langkah pemain,
@@ -78,7 +78,7 @@ void ShowState();
 // I.S. : Permainan telah selesai
 // F.S. : Menampilkan state mana saja yang telah dilalui pada suatu permainan
 
-void Play();
+void Play(char* inpState, char fm, int inp);
 // I.S. :
 // F.S. : Permainan tictactoe dimulai
 

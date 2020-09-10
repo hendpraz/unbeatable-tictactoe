@@ -8,6 +8,7 @@ from subprocess import Popen, PIPE
 application = Flask(__name__, static_folder='../build', static_url_path='/')
 CORS(application)
 
+
 @application.route('/', methods=['POST'])
 def process():
     fm = request.json["fm"]
@@ -30,8 +31,9 @@ def process():
 
     return jsonify(res)
 
+
 def execute(fm, inp, state):
-    # os.system("./prog {} {} {}".format(fm, inp, state))
+    # Execute C program based on request body
     cmd = "./prog {} {} {}".format(fm, inp, state)
 
     p = Popen(cmd.split(), stdout=PIPE)
@@ -53,18 +55,15 @@ def execute(fm, inp, state):
     
     return result
 
+
 def validate(fm, inp, state):
+    # Validate input
     valid = True
     if (fm != "y" and fm != "n") or (int(inp) < 1 and int(inp) > 9) or (len(state) > 10):
         valid = False
     
     return valid
 
-def main():
-    if validate(fm, inp, state):
-        execute(fm, inp, state)
-    else:
-        print("Invalid input")
 
 # run the application.
 if __name__ == "__main__":

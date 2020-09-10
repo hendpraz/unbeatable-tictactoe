@@ -194,14 +194,14 @@ int main(int argc,char* argv[]){
 	inp = inp - 48;
 	Play(inpState, fm, inp);
 
-	printf("StatusCode: %d\n", StatusCode);
-	printf("Condition: %c\n", Cond);
+	printf("StatusCode: |%d|\n", StatusCode);
+	printf("Condition: |%c|\n", Cond);
 	// TulisSTR(board);
-	printf("State: ");
+	printf("State: |");
 	for(i=0;i<=9;i++) {
 		printf("%c",Elmt(board,i));
 	}
-	printf("\n");
+	printf("|\n");
 
 	// Return Data
 	// StatusCode, Cond, After State

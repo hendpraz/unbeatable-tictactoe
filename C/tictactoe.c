@@ -91,7 +91,7 @@ void check(STR *S){
 	//Algoritma
 	process(*S);
 	if (StatusCode != 1) {
-			Elmt((*S),0) = state[0];
+		Elmt((*S),0) = state[0];
 
 		//Check apakah state sekarang sudah final state
 		if(Menang(*S)){
@@ -175,7 +175,9 @@ void Play(char* inpState, char fm, int inp){
 
 	Cond = Cont;
 	BacaSTEP(&board, inp);
-	fclose(tabel); //Menutup file eskternal
+	if (tabel != NULL) {
+		fclose(tabel); //Menutup file eskternal
+	}
 	
 	// Return Data
 	// Cond, After State
